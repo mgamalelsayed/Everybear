@@ -70,18 +70,23 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 1.95, ease }}
-          className="mt-10 md:mt-14 flex items-center gap-6 text-sm"
+          className="mt-10 md:mt-14 flex flex-wrap items-center gap-4 md:gap-6"
         >
           <Link
             href="/connect"
-            className="focus-ring inline-flex items-center gap-3 border-b border-bone pb-1 hover:gap-5 transition-all duration-300 ease-smooth"
+            className="focus-ring group relative inline-flex items-center gap-4 bg-bone text-ink rounded-full ps-7 pe-3 py-3 text-base md:text-lg font-medium shadow-[0_10px_40px_-10px_rgba(240,236,225,0.5)] hover:shadow-[0_18px_60px_-10px_rgba(240,236,225,0.75)] hover:scale-[1.02] transition-all duration-300 ease-smooth"
           >
             {t('ctaPrimary')}
-            <span aria-hidden className="inline-block rtl:rotate-180">→</span>
+            <span
+              aria-hidden
+              className="inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-ink text-bone rtl:rotate-180 transition-transform duration-300 ease-smooth group-hover:translate-x-0.5"
+            >
+              →
+            </span>
           </Link>
           <a
             href="#work"
-            className="focus-ring inline-flex items-center gap-3 text-bone/85 hover:text-bone transition-colors"
+            className="focus-ring inline-flex items-center gap-2 text-sm md:text-base text-bone/70 hover:text-bone transition-colors ms-2 md:ms-4"
           >
             {t('ctaSecondary')}
           </a>
