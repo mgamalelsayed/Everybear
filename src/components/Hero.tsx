@@ -81,7 +81,17 @@ export function Hero() {
               aria-hidden
               className="inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-ink text-bone rtl:rotate-180 transition-transform duration-300 ease-smooth group-hover:translate-x-0.5"
             >
-              →
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4 md:w-[18px] md:h-[18px]"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </span>
           </Link>
           <a
