@@ -46,9 +46,13 @@ export function ConnectForm() {
   const onSubmit = async (values: ConnectFormValues) => {
     setStatus('submitting');
     try {
-      await new Promise((r) => setTimeout(r, 800));
-      // eslint-disable-next-line no-console
-      console.log('connect submission', values);
+      const honeypot = (document.getElementById('website') as HTMLInputElement | null)?.value ?? '';
+      const res = await fetch('/api/connect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...values, website: honeypot }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus('success');
     } catch {
       setStatus('error');
@@ -65,6 +69,16 @@ export function ConnectForm() {
       noValidate
       className="rounded-card bg-surface border hairline p-6 md:p-10"
     >
+      {/* Honeypot — must stay empty. Visually hidden from humans. */}
+      <input
+        id="website"
+        name="website"
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] -top-[9999px] w-0 h-0 opacity-0"
+      />
       <div className="mb-10 md:mb-14">
         <h2 className="text-display-md font-medium leading-tight">
           {t('headline')}{' '}

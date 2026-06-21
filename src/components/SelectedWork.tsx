@@ -53,7 +53,7 @@ export function SelectedWork() {
         <SectionReveal delay={0.2}>
           <div className="mt-20 flex">
             <Link
-              href="/#work"
+              href="/work"
               className="focus-ring inline-flex items-center gap-3 text-sm border-b border-bone/40 pb-1 hover:border-bone hover:gap-5 transition-all duration-300"
             >
               {t('viewAll')}
@@ -77,6 +77,7 @@ function BrandCard({
   aspect: string;
   featured?: boolean;
 }) {
+  const t = useTranslations('work');
   const client = isAr ? brand.clientAr : brand.client;
   const tag = isAr ? brand.tagAr : brand.tagEn;
 
@@ -105,7 +106,7 @@ function BrandCard({
           {client}
         </p>
         <span className="col-span-4 justify-self-end font-medium text-xs uppercase tracking-widest rtl:tracking-normal text-bone/55 inline-flex items-center gap-2 shrink-0">
-          {isAr ? 'دراسة الحالة' : 'Case study'}
+          {t('caseStudy')}
           <span
             aria-hidden
             className="inline-block rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"

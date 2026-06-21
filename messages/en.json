@@ -16,6 +16,12 @@
     "headline": "Selected work.",
     "counter": "2023 / 2025",
     "viewAll": "View all work",
+    "allWork": "All work",
+    "caseStudy": "Case study",
+    "overview": "Overview",
+    "fromStudio": "From the studio",
+    "nextProject": "Next project",
+    "selected": "Selected work",
     "items": {
       "americana": {
         "client": "Americana",

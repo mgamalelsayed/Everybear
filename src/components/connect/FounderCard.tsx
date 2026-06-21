@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
-
-const BOOK_A_CALL_URL = '#'; // TODO: replace with Cal.com / Calendly URL
+import { BOOK_A_CALL_URL } from '@/lib/links';
 
 export function FounderCard() {
   const t = useTranslations('connect.founder');
@@ -26,6 +25,8 @@ export function FounderCard() {
 
       <a
         href={BOOK_A_CALL_URL}
+        target="_blank"
+        rel="noreferrer"
         className="focus-ring shrink-0 inline-flex items-center justify-center rounded-full bg-bone text-ink text-xs md:text-sm px-4 md:px-5 py-2.5 hover:bg-white transition-colors"
       >
         {t('cta')}

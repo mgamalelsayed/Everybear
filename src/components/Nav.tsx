@@ -34,7 +34,7 @@ export function Nav() {
           <Link href="/#capabilities" className="opacity-90 hover:opacity-100 transition-opacity">
             {t('capabilities')}
           </Link>
-          <Link href="/#studio" className="opacity-90 hover:opacity-100 transition-opacity">
+          <Link href="/studio" className="opacity-90 hover:opacity-100 transition-opacity">
             {t('studio')}
           </Link>
         </nav>

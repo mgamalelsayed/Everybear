@@ -16,6 +16,12 @@
     "headline": "أعمال مختارة.",
     "counter": "٢٠٢٣ / ٢٠٢٥",
     "viewAll": "كل الأعمال",
+    "allWork": "كل الأعمال",
+    "caseStudy": "دراسة الحالة",
+    "overview": "نظرة عامّة",
+    "fromStudio": "من الاستوديو",
+    "nextProject": "المشروع التالي",
+    "selected": "أعمال مختارة",
     "items": {
       "americana": {
         "client": "أمريكانا",

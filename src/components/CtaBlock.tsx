@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { SectionReveal } from './SectionReveal';
+import { BOOK_A_CALL_URL } from '@/lib/links';
 
 export function CtaBlock() {
   const t = useTranslations('ctaBlock');
@@ -24,7 +25,9 @@ export function CtaBlock() {
               <span aria-hidden className="inline-block rtl:rotate-180">→</span>
             </Link>
             <a
-              href="#"
+              href={BOOK_A_CALL_URL}
+              target="_blank"
+              rel="noreferrer"
               className="focus-ring inline-flex items-center gap-3 text-bone/85 hover:text-bone transition-colors"
             >
               {t('ctaSecondary')}

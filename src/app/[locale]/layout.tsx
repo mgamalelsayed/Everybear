@@ -41,10 +41,29 @@ const helveticaCondensed = localFont({
   display: 'swap',
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://everybear.net';
+
 export const metadata: Metadata = {
-  title: 'Everybear · Brand, packaging, signage, events.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Everybear · Brand, packaging, signage, events.',
+    template: '%s · Everybear',
+  },
   description:
-    'A full-service advertising agency. We design and build brand work that earns a second look.',
+    'A full-service advertising agency. We design and build brand work that earns a second look. Cairo · Doha · Toronto.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Everybear',
+    title: 'Everybear · Brand, packaging, signage, events.',
+    description:
+      'A full-service advertising agency. We design and build brand work that earns a second look.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Everybear · Brand, packaging, signage, events.',
+    description:
+      'A full-service advertising agency. We design and build brand work that earns a second look.',
+  },
 };
 
 export function generateStaticParams() {

@@ -11,6 +11,7 @@ const ease = [0.6, 0.05, 0.05, 1] as const;
 
 export function WorkMenu() {
   const t = useTranslations('nav');
+  const tWork = useTranslations('work');
   const locale = useLocale();
   const isAr = locale === 'ar';
   const [open, setOpen] = useState(false);
@@ -81,14 +82,14 @@ export function WorkMenu() {
               <div className="mx-auto max-w-wide px-6 md:px-10 py-10 md:py-12">
                 <div className="flex items-baseline justify-between mb-6 md:mb-8">
                   <p className="font-medium text-[11px] uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55">
-                    {isAr ? 'أعمال مختارة' : 'Selected work'}
+                    {tWork('selected')}
                   </p>
                   <Link
-                    href="/#work"
+                    href="/work"
                     onClick={() => setOpen(false)}
                     className="focus-ring text-[11px] font-medium uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 hover:text-bone transition-colors inline-flex items-center gap-2"
                   >
-                    {isAr ? 'كل الأعمال' : 'All work'}
+                    {tWork('allWork')}
                     <span aria-hidden className="inline-block rtl:rotate-180">→</span>
                   </Link>
                 </div>
