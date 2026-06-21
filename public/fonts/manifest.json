@@ -1,0 +1,86 @@
+[
+  {
+    "filename": "helvetica-neue-regular.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Regular",
+    "postscript": "HelveticaNeue"
+  },
+  {
+    "filename": "helvetica-neue-bold.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Bold",
+    "postscript": "HelveticaNeue-Bold"
+  },
+  {
+    "filename": "helvetica-neue-italic.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Italic",
+    "postscript": "HelveticaNeue-Italic"
+  },
+  {
+    "filename": "helvetica-neue-bold-italic.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Bold Italic",
+    "postscript": "HelveticaNeue-BoldItalic"
+  },
+  {
+    "filename": "helvetica-neue-condensed-bold.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Condensed Bold",
+    "postscript": "HelveticaNeue-CondensedBold"
+  },
+  {
+    "filename": "helvetica-neue-ultralight.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "UltraLight",
+    "postscript": "HelveticaNeue-UltraLight"
+  },
+  {
+    "filename": "helvetica-neue-ultralight-italic.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "UltraLight Italic",
+    "postscript": "HelveticaNeue-UltraLightItalic"
+  },
+  {
+    "filename": "helvetica-neue-light.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Light",
+    "postscript": "HelveticaNeue-Light"
+  },
+  {
+    "filename": "helvetica-neue-light-italic.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Light Italic",
+    "postscript": "HelveticaNeue-LightItalic"
+  },
+  {
+    "filename": "helvetica-neue-condensed-black.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Condensed Black",
+    "postscript": "HelveticaNeue-CondensedBlack"
+  },
+  {
+    "filename": "helvetica-neue-medium.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Medium",
+    "postscript": "HelveticaNeue-Medium"
+  },
+  {
+    "filename": "helvetica-neue-medium-italic.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Medium Italic",
+    "postscript": "HelveticaNeue-MediumItalic"
+  },
+  {
+    "filename": "helvetica-neue-thin.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Thin",
+    "postscript": "HelveticaNeue-Thin"
+  },
+  {
+    "filename": "helvetica-neue-thin-italic.ttf",
+    "family": "Helvetica Neue",
+    "subfamily": "Thin Italic",
+    "postscript": "HelveticaNeue-ThinItalic"
+  }
+]

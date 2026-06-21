@@ -1,0 +1,177 @@
+{
+  "nav": {
+    "work": "Work",
+    "capabilities": "Capabilities",
+    "studio": "Studio",
+    "connect": "Connect"
+  },
+  "hero": {
+    "eyebrow": "Advertising · Production · Events",
+    "headline": "Brand work\nworth a\nsecond look.",
+    "lede": "Everybear is a full-service advertising agency. We design and build the packaging, branding, signage, and events that earn brands their place. On shelves, on streets, and in memory.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "See selected work"
+  },
+  "work": {
+    "headline": "Selected work.",
+    "counter": "2023 / 2025",
+    "viewAll": "View all work",
+    "items": {
+      "americana": {
+        "client": "Americana",
+        "title": "A frozen aisle, reimagined.",
+        "tag": "Packaging system"
+      },
+      "twoTwo": {
+        "client": "22 Avenue",
+        "title": "A promenade with its own rhythm.",
+        "tag": "Identity & signage"
+      },
+      "chicka": {
+        "client": "Chicka",
+        "title": "A snack with a face you remember.",
+        "tag": "Brand & packaging"
+      },
+      "soFresh": {
+        "client": "So Fresh",
+        "title": "Farm-to-shelf, head to toe.",
+        "tag": "Packaging & retail"
+      }
+    }
+  },
+  "capabilities": {
+    "headline": "What we make.",
+    "lede": "Five disciplines, one workshop. Strategy, design, and production under one roof, so the idea we propose is the idea we can ship.",
+    "items": {
+      "packaging": {
+        "title": "Packaging & Print",
+        "body": "Shelf-stopping packs, labels, catalogs, and stationery. Designed, proofed, and printed in-house."
+      },
+      "branding": {
+        "title": "Branding & Identity",
+        "body": "Logos, identity systems, and rollouts rooted in strategy. Built to scale across markets."
+      },
+      "production": {
+        "title": "Signs & Production",
+        "body": "Backlit signage, retail displays, booths, and storey-tall installations. We engineer and install."
+      },
+      "cnc": {
+        "title": "CNC & Maquettes",
+        "body": "Precision cuts in foam, wood, acrylic, and metal. Prototypes, props, and architectural models."
+      },
+      "events": {
+        "title": "Event Production",
+        "body": "Stages, stands, giveaways, wrapped vehicles, full venue branding. We run the day."
+      }
+    }
+  },
+  "clients": {
+    "headline": "Trusted by.",
+    "lede": "A short list of long-term partners. Some you'll know. Some you've eaten off the shelf without realising.",
+    "names": [
+      "Americana",
+      "Huawei",
+      "Samsung",
+      "Vodafone",
+      "HSBC",
+      "Coca-Cola",
+      "Microsoft",
+      "Costa Coffee",
+      "Philips",
+      "Nissan",
+      "Danone",
+      "Banque Misr",
+      "TotalEnergies",
+      "Zanussi",
+      "Hardees"
+    ]
+  },
+  "ctaBlock": {
+    "headline": "Got a brand to launch, refresh, or rescue?",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "Book a call"
+  },
+  "footer": {
+    "offices": "Offices",
+    "officesList": ["Cairo", "Doha", "Toronto"],
+    "contact": "Contact",
+    "social": "Social",
+    "rights": "© 2025 Everybear Agency",
+    "builtIn": "Cairo / Doha / Toronto"
+  },
+  "connect": {
+    "eyebrow": "Connect",
+    "headline": "Tell us what you're building.",
+    "founder": {
+      "name": "Amr Safwat, Founder",
+      "caption": "Rather talk it through?",
+      "cta": "Book a call"
+    },
+    "form": {
+      "headline": "Let's make something good.",
+      "sub": "Fill in the form below. We'll aim to reply within one business day.",
+      "services": {
+        "label": "You're interested in",
+        "options": {
+          "packaging": "Packaging & Labels",
+          "branding": "Branding & Identity",
+          "production": "Signs & Production",
+          "cnc": "CNC & Maquettes",
+          "events": "Event Production",
+          "print": "Print & Publications",
+          "outdoor": "Outdoor & Billboards",
+          "other": "Something else"
+        }
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "First and last"
+      },
+      "company": {
+        "label": "Company",
+        "placeholder": "Company or brand"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "+20 …"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@company.com"
+      },
+      "budget": {
+        "label": "Budget estimate",
+        "maxLabel": "{value}+"
+      },
+      "goals": {
+        "label": "Partnership goals",
+        "placeholder": "What are we helping you launch, refresh, or rescue? Timeline, scope, links, whatever helps."
+      },
+      "referral": {
+        "label": "How did you find us? (Optional)",
+        "placeholder": "Choose an option",
+        "options": {
+          "instagram": "Instagram",
+          "linkedin": "LinkedIn",
+          "referral": "A friend / client referral",
+          "search": "Google / Search",
+          "event": "Event or trade show",
+          "other": "Other"
+        }
+      },
+      "disclaimer": "We reply within one business day.",
+      "submit": "Send",
+      "submitting": "Sending…",
+      "errors": {
+        "services": "Pick at least one, even if it's “Something else.”",
+        "required": "Required.",
+        "email": "Use a valid email.",
+        "submit": "Something went wrong. Try again or email info@everybear.net."
+      }
+    },
+    "success": {
+      "headline": "Got it. Thank you.",
+      "body": "Your message has landed. We'll be back to you within one business day."
+    }
+  }
+}

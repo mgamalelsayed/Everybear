@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: theme('colors.ink');
+  color: theme('colors.bone');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-feature-settings: 'kern', 'liga';
+}
+
+::selection {
+  background: theme('colors.bone');
+  color: theme('colors.ink');
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-bone focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+}
+
+/* Hairline divider used throughout */
+.hairline {
+  border-color: theme('colors.line');
+}
+
+/* Range slider (used on Connect budget) */
+input[type='range'].budget {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  height: 24px;
+}
+input[type='range'].budget::-webkit-slider-runnable-track {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    theme('colors.bone') var(--fill, 0%),
+    theme('colors.line') var(--fill, 0%)
+  );
+}
+[dir='rtl'] input[type='range'].budget::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to left,
+    theme('colors.bone') var(--fill, 0%),
+    theme('colors.line') var(--fill, 0%)
+  );
+}
+input[type='range'].budget::-moz-range-track {
+  height: 2px;
+  background: theme('colors.line');
+}
+input[type='range'].budget::-moz-range-progress {
+  height: 2px;
+  background: theme('colors.bone');
+}
+input[type='range'].budget::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: theme('colors.bone');
+  margin-top: -8px;
+  cursor: grab;
+  border: 0;
+  box-shadow: 0 0 0 6px rgba(240, 236, 225, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+input[type='range'].budget::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  box-shadow: 0 0 0 10px rgba(240, 236, 225, 0.1);
+}
+input[type='range'].budget::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: theme('colors.bone');
+  border: 0;
+  cursor: grab;
+}
+
+/* RTL slider direction handled inline by reading dir */
