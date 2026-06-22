@@ -21,12 +21,16 @@ export function MobileMenu() {
     setOpen(false);
   }, [pathname]);
 
-  // Lock body scroll while open
+  // Lock html + body scroll while open. iOS Safari needs both.
   useEffect(() => {
     if (open) {
+      const prevHtml = document.documentElement.style.overflow;
+      const prevBody = document.body.style.overflow;
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
       return () => {
-        document.body.style.overflow = '';
+        document.documentElement.style.overflow = prevHtml;
+        document.body.style.overflow = prevBody;
       };
     }
   }, [open]);
@@ -59,81 +63,84 @@ export function MobileMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[60] bg-ink"
             role="dialog"
             aria-modal="true"
+            className="fixed inset-0 z-[60] bg-ink overflow-y-auto"
+            style={{
+              backgroundColor: '#0a0a0a',
+              minHeight: '100dvh',
+              height: '100dvh',
+            }}
           >
-            <div className="flex flex-col h-full">
-              {/* Top bar with close */}
-              <div className="flex items-center justify-end px-6 h-24">
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  aria-label={isAr ? 'إغلاق القائمة' : 'Close menu'}
-                  className="focus-ring relative w-10 h-10 -mr-2 rtl:-ml-2 rtl:mr-0"
-                >
-                  <span className="absolute inset-0 m-auto block w-6 h-px bg-bone rotate-45" />
-                  <span className="absolute inset-0 m-auto block w-6 h-px bg-bone -rotate-45" />
-                </button>
-              </div>
-
-              {/* Primary nav */}
-              <motion.nav
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.05, ease }}
-                className="flex-1 overflow-y-auto px-6 pt-4 pb-10"
+            {/* Top bar — sticky so close button stays accessible while scrolling */}
+            <div className="sticky top-0 z-10 bg-ink flex items-center justify-end px-6 h-20">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={isAr ? 'إغلاق القائمة' : 'Close menu'}
+                className="focus-ring relative w-10 h-10 -mr-2 rtl:-ml-2 rtl:mr-0"
               >
-                <ul className="space-y-2">
-                  {[
-                    { href: '/work', label: t('work') },
-                    { href: '/#capabilities', label: t('capabilities') },
-                    { href: '/studio', label: t('studio') },
-                    { href: '/connect', label: t('connect') },
-                  ].map((item) => (
-                    <li key={item.href}>
+                <span className="absolute inset-0 m-auto block w-6 h-px bg-bone rotate-45" />
+                <span className="absolute inset-0 m-auto block w-6 h-px bg-bone -rotate-45" />
+              </button>
+            </div>
+
+            {/* Primary nav */}
+            <motion.nav
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05, ease }}
+              className="px-6 pt-4 pb-10"
+            >
+              <ul className="space-y-2">
+                {[
+                  { href: '/work', label: t('work') },
+                  { href: '/#capabilities', label: t('capabilities') },
+                  { href: '/studio', label: t('studio') },
+                  { href: '/connect', label: t('connect') },
+                ].map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="focus-ring block font-condensed font-black uppercase text-[12vw] leading-[1.05] tracking-[-0.02em] rtl:leading-[1.1] rtl:tracking-normal py-2 hover:opacity-70 transition-opacity"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Work shortcut list */}
+              <div className="mt-12 pt-8 border-t hairline">
+                <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 mb-5">
+                  {tWork('selected')}
+                </p>
+                <ul className="space-y-3">
+                  {BRANDS.map((brand) => (
+                    <li key={brand.slug}>
                       <Link
-                        href={item.href}
-                        className="focus-ring block font-condensed font-black uppercase text-[12vw] leading-[1.05] tracking-[-0.02em] rtl:leading-[1.1] rtl:tracking-normal py-2 hover:opacity-70 transition-opacity"
+                        href={`/work/${brand.slug}`}
+                        className="focus-ring inline-flex items-center justify-between w-full py-1 text-lg text-bone/85 hover:text-bone transition-colors"
                       >
-                        {item.label}
+                        <span>{isAr ? brand.clientAr : brand.client}</span>
+                        <span aria-hidden className="text-bone/40 ms-3 inline-block rtl:rotate-180">
+                          →
+                        </span>
                       </Link>
                     </li>
                   ))}
                 </ul>
-
-                {/* Work shortcut list */}
-                <div className="mt-12 pt-8 border-t hairline">
-                  <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 mb-5">
-                    {tWork('selected')}
-                  </p>
-                  <ul className="space-y-3">
-                    {BRANDS.map((brand) => (
-                      <li key={brand.slug}>
-                        <Link
-                          href={`/work/${brand.slug}`}
-                          className="focus-ring inline-flex items-center justify-between w-full py-1 text-lg text-bone/85 hover:text-bone transition-colors"
-                        >
-                          <span>{isAr ? brand.clientAr : brand.client}</span>
-                          <span aria-hidden className="text-bone/40 ms-3 inline-block rtl:rotate-180">
-                            →
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.nav>
-
-              {/* Footer in menu */}
-              <div className="px-6 pb-10 border-t hairline pt-6 text-sm text-bone/55 space-y-1">
-                <a href="mailto:info@everybear.net" className="block hover:text-bone transition-colors">
-                  info@everybear.net
-                </a>
-                <a href="tel:+201229094992" dir="ltr" className="block hover:text-bone transition-colors">
-                  +20 122 909 4992
-                </a>
               </div>
+            </motion.nav>
+
+            {/* Footer in menu */}
+            <div className="px-6 pb-10 border-t hairline pt-6 text-sm text-bone/55 space-y-1">
+              <a href="mailto:info@everybear.net" className="block hover:text-bone transition-colors">
+                info@everybear.net
+              </a>
+              <a href="tel:+201229094992" dir="ltr" className="block hover:text-bone transition-colors">
+                +20 122 909 4992
+              </a>
             </div>
           </motion.div>
         )}
