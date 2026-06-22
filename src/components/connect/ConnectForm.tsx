@@ -13,6 +13,7 @@ import {
   type ServiceKey,
 } from '@/lib/connectSchema';
 import { BudgetSlider } from './BudgetSlider';
+import { Arrow } from '../icons/Arrow';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -269,7 +270,9 @@ export function ConnectForm() {
           className="focus-ring inline-flex items-center gap-3 rounded-full border border-bone/40 hover:bg-bone hover:text-ink px-6 py-3 text-sm transition-all disabled:opacity-90"
         >
           {status === 'submitting' ? t('submitting') : t('submit')}
-          <span aria-hidden className="inline-block rtl:rotate-180">→</span>
+          <span className="inline-block rtl:rotate-180">
+            <Arrow className="w-4 h-4" />
+          </span>
         </button>
       </div>
     </form>

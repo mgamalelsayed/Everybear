@@ -6,6 +6,7 @@ import { LocaleSwitcher } from './LocaleSwitcher';
 import { WorkMenu } from './WorkMenu';
 import { Logo } from './Logo';
 import { MobileMenu } from './MobileMenu';
+import { Arrow } from './icons/Arrow';
 import { useEffect, useState } from 'react';
 
 export function Nav() {
@@ -47,11 +48,8 @@ export function Nav() {
             className="focus-ring hidden md:inline-flex items-center text-[13px] tracking-wide group"
           >
             {t('connect')}
-            <span
-              aria-hidden
-              className="ms-2 inline-block rtl:rotate-180 transition-transform duration-300 ease-smooth group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
-            >
-              →
+            <span className="ms-2 inline-block rtl:rotate-180 transition-transform duration-300 ease-smooth group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+              <Arrow className="w-3.5 h-3.5" />
             </span>
           </Link>
           <MobileMenu />

@@ -12,8 +12,8 @@ export function Logo({
 }) {
   const src =
     variant === 'full' ? '/logo-everybear-full.svg' : '/logo-everybear.svg';
-  // Native aspect ratios from the source SVG viewBoxes
-  const ratio = variant === 'full' ? 433.16 / 191.94 : 205.93 / 191.94;
+  // Native aspect ratios from the source SVG viewBoxes (after cropping internal whitespace)
+  const ratio = variant === 'full' ? 433.16 / 191.94 : 158 / 133;
 
   return (
     <span

@@ -3,6 +3,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { BRANDS } from '@/lib/work';
 import { SectionReveal } from './SectionReveal';
+import { Arrow } from './icons/Arrow';
 
 export function SelectedWork() {
   const t = useTranslations('work');
@@ -57,7 +58,9 @@ export function SelectedWork() {
               className="focus-ring inline-flex items-center gap-3 text-sm border-b border-bone/40 pb-1 hover:border-bone hover:gap-5 transition-all duration-300"
             >
               {t('viewAll')}
-              <span aria-hidden className="inline-block rtl:rotate-180">→</span>
+              <span className="inline-block rtl:rotate-180">
+                <Arrow className="w-4 h-4" />
+              </span>
             </Link>
           </div>
         </SectionReveal>
@@ -107,11 +110,8 @@ function BrandCard({
         </p>
         <span className="col-span-4 justify-self-end font-medium text-xs uppercase tracking-widest rtl:tracking-normal text-bone/55 inline-flex items-center gap-2 shrink-0">
           {t('caseStudy')}
-          <span
-            aria-hidden
-            className="inline-block rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
-          >
-            →
+          <span className="inline-block rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+            <Arrow className="w-3.5 h-3.5" />
           </span>
         </span>
         <p className="col-span-12 mt-1 text-sm md:text-base text-bone/85">{tag}</p>

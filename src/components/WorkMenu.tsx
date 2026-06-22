@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { BRANDS } from '@/lib/work';
+import { Arrow } from './icons/Arrow';
 
 const ease = [0.6, 0.05, 0.05, 1] as const;
 
@@ -90,7 +91,9 @@ export function WorkMenu() {
                     className="focus-ring text-[11px] rtl:text-sm font-medium uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 hover:text-bone transition-colors inline-flex items-center gap-2"
                   >
                     {tWork('allWork')}
-                    <span aria-hidden className="inline-block rtl:rotate-180">→</span>
+                    <span className="inline-block rtl:rotate-180">
+                      <Arrow className="w-3.5 h-3.5" />
+                    </span>
                   </Link>
                 </div>
 

@@ -3,8 +3,8 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Link } from '@/i18n/routing';
 import { IntroScratch } from './IntroScratch';
+import { CtaButton } from './CtaButton';
 
 const ease = [0.6, 0.05, 0.05, 1] as const;
 
@@ -12,7 +12,7 @@ export function Hero() {
   const t = useTranslations('hero');
 
   return (
-    <section className="relative min-h-screen overflow-hidden border-b hairline">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Bear photograph: settles in after the scratch animation as a quiet
           backdrop behind the slogan. Cropped to remove original portfolio text. */}
       <motion.div
@@ -43,64 +43,49 @@ export function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 1.2, ease }}
-          className="font-condensed font-black leading-[0.86] tracking-[-0.025em] uppercase select-none"
+          className="font-condensed font-black leading-[0.86] tracking-[-0.025em] uppercase select-none -ms-[0.04em]"
           style={{ fontSize: 'clamp(4rem, 15vw, 14rem)' }}
         >
           <span className="block">Everybear</span>
           <span className="block">Everywhere</span>
         </motion.h1>
 
-        {/* Eyebrow + descriptor row */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.7, ease }}
-          className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-end"
-        >
-          <p className="md:col-span-5 font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
-            {t('eyebrow')}
-          </p>
-          <p className="md:col-span-5 md:col-start-8 text-base md:text-lg leading-relaxed rtl:leading-[1.85] text-bone/85 max-w-prose">
-            {t('lede')}
-          </p>
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.95, ease }}
-          className="mt-10 md:mt-14 flex flex-wrap items-center gap-4 md:gap-6"
-        >
-          <Link
-            href="/connect"
-            className="focus-ring group relative inline-flex items-center gap-4 bg-bone text-ink rounded-full ps-7 pe-3 py-3 text-base md:text-lg font-medium shadow-[0_10px_40px_-10px_rgba(240,236,225,0.5)] hover:shadow-[0_18px_60px_-10px_rgba(240,236,225,0.75)] hover:scale-[1.02] transition-all duration-300 ease-smooth"
+        {/*
+          Auto-layout-style row:
+          - LEFT col: vertical stack of eyebrow + CTAs with consistent gap
+          - RIGHT col: lede paragraph
+          - items-end aligns the bottom of both columns (lede sits at the CTA line)
+        */}
+        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-y-10 gap-x-8 md:gap-x-12 items-end">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.7, ease }}
+            className="md:col-span-6 lg:col-span-5 flex flex-col gap-10 md:gap-12"
           >
-            {t('ctaPrimary')}
-            <span
-              aria-hidden
-              className="inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-ink text-bone rtl:rotate-180 transition-transform duration-300 ease-smooth group-hover:translate-x-0.5"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-4 h-4 md:w-[18px] md:h-[18px]"
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
+              {t('eyebrow')}
+            </p>
+            <div className="flex flex-wrap items-center gap-4 md:gap-6">
+              <CtaButton href="/connect">{t('ctaPrimary')}</CtaButton>
+              <a
+                href="#work"
+                className="focus-ring inline-flex items-center text-sm md:text-base text-bone/70 hover:text-bone transition-colors"
               >
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
-          </Link>
-          <a
-            href="#work"
-            className="focus-ring inline-flex items-center gap-2 text-sm md:text-base text-bone/70 hover:text-bone transition-colors ms-2 md:ms-4"
+                {t('ctaSecondary')}
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.85, ease }}
+            className="md:col-span-6 lg:col-span-5 lg:col-start-8 text-base md:text-lg leading-relaxed rtl:leading-[1.85] text-bone/85 max-w-prose"
           >
-            {t('ctaSecondary')}
-          </a>
-        </motion.div>
+            {t('lede')}
+          </motion.p>
+        </div>
       </div>
 
       {/* Scroll cue */}

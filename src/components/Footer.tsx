@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Logo } from './Logo';
+import { Arrow } from './icons/Arrow';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -17,11 +18,8 @@ export function Footer() {
               className="focus-ring inline-block text-display-md font-medium group"
             >
               info@everybear.net
-              <span
-                aria-hidden
-                className="ms-2 inline-block rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"
-              >
-                →
+              <span className="ms-2 inline-block rtl:rotate-180 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                <Arrow className="w-5 h-5 md:w-6 md:h-6" />
               </span>
             </Link>
           </div>

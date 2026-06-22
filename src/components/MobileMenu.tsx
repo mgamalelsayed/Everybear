@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, usePathname } from '@/i18n/routing';
 import { BRANDS } from '@/lib/work';
+import { Arrow } from './icons/Arrow';
 
 const ease = [0.65, 0.02, 0.05, 1] as const;
 
@@ -123,8 +124,8 @@ export function MobileMenu() {
                         className="focus-ring inline-flex items-center justify-between w-full py-1 text-lg text-bone/85 hover:text-bone transition-colors"
                       >
                         <span>{isAr ? brand.clientAr : brand.client}</span>
-                        <span aria-hidden className="text-bone/40 ms-3 inline-block rtl:rotate-180">
-                          →
+                        <span className="text-bone/40 ms-3 inline-block rtl:rotate-180">
+                          <Arrow className="w-4 h-4" />
                         </span>
                       </Link>
                     </li>

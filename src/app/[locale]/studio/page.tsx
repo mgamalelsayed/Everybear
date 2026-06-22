@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Link } from '@/i18n/routing';
 import { SectionReveal } from '@/components/SectionReveal';
+import { CtaButton } from '@/components/CtaButton';
 import { CLIENTS } from '@/lib/clients';
 
 export const metadata: Metadata = {
@@ -220,20 +220,7 @@ function StudioContent() {
               {t('ctaBlock.headline')}
             </h2>
             <div className="md:col-span-5 md:justify-self-end">
-              <Link
-                href="/connect"
-                className="focus-ring group inline-flex items-center gap-4 bg-bone text-ink rounded-full ps-7 pe-3 py-3 text-base md:text-lg font-medium hover:scale-[1.02] transition-all duration-300 ease-smooth"
-              >
-                {t('ctaBlock.ctaPrimary')}
-                <span
-                  aria-hidden
-                  className="inline-flex items-center justify-center w-9 h-9 md:w-10 md:h-10 rounded-full bg-ink text-bone rtl:rotate-180 transition-transform duration-300 ease-smooth group-hover:translate-x-0.5"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 md:w-[18px] md:h-[18px]">
-                    <path d="M5 12h14M13 6l6 6-6 6" />
-                  </svg>
-                </span>
-              </Link>
+              <CtaButton href="/connect">{t('ctaBlock.ctaPrimary')}</CtaButton>
             </div>
           </div>
         </div>

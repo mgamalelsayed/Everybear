@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { Arrow } from '@/components/icons/Arrow';
 
 export default function NotFound() {
   // Note: next-intl's not-found uses fallback locale messages when
@@ -32,14 +33,14 @@ export default function NotFound() {
               className="focus-ring inline-flex items-center gap-3 text-bone/85 hover:text-bone transition-colors"
             >
               {t('work')}
-              <span aria-hidden className="inline-block rtl:rotate-180">→</span>
+              <span className="inline-block rtl:rotate-180"><Arrow className="w-4 h-4" /></span>
             </Link>
             <Link
               href="/connect"
               className="focus-ring inline-flex items-center gap-3 text-bone/85 hover:text-bone transition-colors"
             >
               {t('connect')}
-              <span aria-hidden className="inline-block rtl:rotate-180">→</span>
+              <span className="inline-block rtl:rotate-180"><Arrow className="w-4 h-4" /></span>
             </Link>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { BRANDS, findBrand, nextBrand, type Brand, type GalleryItem } from '@/lib/work';
 import { SectionReveal } from '@/components/SectionReveal';
+import { Arrow } from '@/components/icons/Arrow';
 
 export function generateStaticParams() {
   return BRANDS.map((b) => ({ slug: b.slug }));
@@ -62,7 +63,9 @@ function WorkPageContent({ brand }: { brand: Brand }) {
               href="/work"
               className="focus-ring inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 hover:text-bone transition-colors mb-10"
             >
-              <span aria-hidden className="inline-block rtl:rotate-180">←</span>
+              <span className="inline-block rotate-180 rtl:rotate-0">
+                <Arrow className="w-4 h-4" />
+              </span>
               {t('allWork')}
             </Link>
           </SectionReveal>
@@ -174,9 +177,9 @@ function WorkPageContent({ brand }: { brand: Brand }) {
             </div>
             <span
               aria-hidden
-              className="font-condensed text-display-md inline-block rtl:rotate-180 transition-transform duration-500 ease-smooth group-hover:translate-x-3 rtl:group-hover:-translate-x-3 shrink-0"
+              className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-bone text-ink rtl:rotate-180 transition-transform duration-500 ease-smooth group-hover:translate-x-2 rtl:group-hover:-translate-x-2 shrink-0"
             >
-              →
+              <Arrow className="w-5 h-5 md:w-6 md:h-6" />
             </span>
           </div>
         </Link>
