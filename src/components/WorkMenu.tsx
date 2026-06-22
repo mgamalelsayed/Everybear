@@ -67,7 +67,7 @@ export function WorkMenu() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-x-0 top-28 md:top-36 z-40 h-px bg-line"
+              className="fixed inset-x-0 top-20 md:top-36 z-40 h-px bg-line"
               aria-hidden
             />
 
@@ -77,7 +77,7 @@ export function WorkMenu() {
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.35, ease }}
               role="menu"
-              className="fixed inset-x-0 top-28 md:top-36 z-40 bg-ink/95 backdrop-blur-md border-b hairline"
+              className="fixed inset-x-0 top-20 md:top-36 z-40 bg-ink/95 backdrop-blur-md border-b hairline"
             >
               <div className="mx-auto max-w-wide px-6 md:px-10 py-10 md:py-12">
                 <div className="flex items-baseline justify-between mb-6 md:mb-8">

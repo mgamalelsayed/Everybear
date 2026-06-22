@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { SectionReveal } from '@/components/SectionReveal';
 import { CLIENTS } from '@/lib/clients';
+
+export const metadata: Metadata = {
+  title: 'Studio',
+  description:
+    'Everybear is a full-service advertising agency. Founded by Amr Safwat. Strategy, design, and production under one workshop. Cairo, Doha, Toronto.',
+};
 
 export default async function StudioPage({
   params,

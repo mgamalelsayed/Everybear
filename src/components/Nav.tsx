@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { WorkMenu } from './WorkMenu';
 import { Logo } from './Logo';
+import { MobileMenu } from './MobileMenu';
 import { useEffect, useState } from 'react';
 
 export function Nav() {
@@ -24,9 +25,9 @@ export function Nav() {
         scrolled ? 'bg-ink/80 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto max-w-wide flex items-center justify-between px-6 md:px-10 h-28 md:h-36">
+      <div className="mx-auto max-w-wide flex items-center justify-between px-6 md:px-10 h-20 md:h-36">
         <Link href="/" className="focus-ring inline-flex items-center" aria-label="Everybear, home">
-          <Logo variant="compact" className="h-20 md:h-28 w-auto" />
+          <Logo variant="compact" className="h-14 md:h-28 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-[13px] tracking-wide">
@@ -43,7 +44,7 @@ export function Nav() {
           <LocaleSwitcher />
           <Link
             href="/connect"
-            className="focus-ring inline-flex items-center text-[13px] tracking-wide group"
+            className="focus-ring hidden md:inline-flex items-center text-[13px] tracking-wide group"
           >
             {t('connect')}
             <span
@@ -53,6 +54,7 @@ export function Nav() {
               →
             </span>
           </Link>
+          <MobileMenu />
         </div>
       </div>
     </header>

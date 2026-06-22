@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { FounderCard } from '@/components/connect/FounderCard';
 import { ConnectForm } from '@/components/connect/ConnectForm';
+
+export const metadata: Metadata = {
+  title: 'Connect',
+  description:
+    'Tell us what you are building. We reply within one business day. Or book a call with the founder.',
+};
 
 export default async function ConnectPage({
   params,

@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { BRANDS } from '@/lib/work';
 import { SectionReveal } from '@/components/SectionReveal';
+
+export const metadata: Metadata = {
+  title: 'Work',
+  description:
+    'Selected case studies from Everybear: packaging, branding, signage, and event production for Americana, Break, So Fresh, Chicka, and 22 Avenue.',
+};
 
 export default async function WorkIndexPage({
   params,

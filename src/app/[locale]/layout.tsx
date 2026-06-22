@@ -6,6 +6,7 @@ import localFont from 'next/font/local';
 import { routing } from '@/i18n/routing';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
+import { Analytics } from '@/components/Analytics';
 import '../globals.css';
 
 /**
@@ -96,6 +97,7 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
