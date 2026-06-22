@@ -16,7 +16,7 @@ export function Logo({
   const config = {
     icon: { src: '/logo-everybear-icon.svg', ratio: 95 / 115 },
     compact: { src: '/logo-everybear.svg', ratio: 158 / 133 },
-    full: { src: '/logo-everybear-full.svg', ratio: 370 / 125 },
+    full: { src: '/logo-everybear-full.svg', ratio: 395 / 125 },
   }[variant];
 
   return (
