@@ -26,7 +26,7 @@ function ConnectPageContent() {
     <section className="pt-28 md:pt-40 pb-24 md:pb-32">
       <div className="mx-auto max-w-3xl px-6 md:px-10">
         <header className="mb-10 md:mb-12">
-          <p className="font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-6">
+          <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-6">
             {t('eyebrow')}
           </p>
           <h1 className="font-medium text-display-lg max-w-2xl">

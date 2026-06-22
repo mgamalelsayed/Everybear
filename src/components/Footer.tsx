@@ -27,7 +27,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
               {t('offices')}
             </p>
             <ul className="space-y-1 text-sm">
@@ -38,7 +38,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2">
-            <p className="font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
               {t('contact')}
             </p>
             <ul className="space-y-1 text-sm">
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2 md:col-start-11">
-            <p className="font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
               {t('social')}
             </p>
             <ul className="space-y-1 text-sm">
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t hairline flex flex-col md:flex-row md:items-center md:justify-between gap-3 font-medium text-[11px] text-bone/55 uppercase tracking-widest rtl:tracking-normal">
+        <div className="mt-16 pt-6 border-t hairline flex flex-col md:flex-row md:items-center md:justify-between gap-3 font-medium text-[11px] rtl:text-sm text-bone/55 uppercase tracking-widest rtl:tracking-normal">
           <p>{t('rights')}</p>
           <p>{t('builtIn')}</p>
         </div>

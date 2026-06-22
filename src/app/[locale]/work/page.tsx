@@ -33,7 +33,7 @@ function WorkIndexContent() {
       <section className="pt-40 md:pt-56 pb-16 md:pb-24 border-b hairline">
         <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
               {isAr ? 'كل الأعمال' : 'All work'}
             </p>
           </SectionReveal>

@@ -60,7 +60,7 @@ export function BudgetSlider({
 
         <div
           role="tablist"
-          className="inline-flex rounded-full border hairline p-0.5 text-[11px] font-medium uppercase tracking-widest rtl:tracking-normal"
+          className="inline-flex rounded-full border hairline p-0.5 text-[11px] rtl:text-sm font-medium uppercase tracking-widest rtl:tracking-normal"
         >
           {(['USD', 'EGP'] as const).map((c) => (
             <button
@@ -94,7 +94,7 @@ export function BudgetSlider({
         style={{ ['--fill' as string]: `${fill}%` }}
       />
 
-      <div className="mt-3 flex items-center justify-between font-medium text-[11px] text-bone/85 uppercase tracking-widest rtl:tracking-normal">
+      <div className="mt-3 flex items-center justify-between font-medium text-[11px] rtl:text-sm text-bone/85 uppercase tracking-widest rtl:tracking-normal">
         <span dir="ltr">{format(BUDGET_MIN_USD, currency)}</span>
         <span dir="ltr">{format(BUDGET_MAX_USD, currency)}</span>
       </div>

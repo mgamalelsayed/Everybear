@@ -52,7 +52,7 @@ export function WorkMenu() {
         {t('work')}
         <span
           aria-hidden
-          className={`text-[10px] transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+          className={`text-[10px] rtl:text-sm transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
         >
           ▾
         </span>
@@ -81,13 +81,13 @@ export function WorkMenu() {
             >
               <div className="mx-auto max-w-wide px-6 md:px-10 py-10 md:py-12">
                 <div className="flex items-baseline justify-between mb-6 md:mb-8">
-                  <p className="font-medium text-[11px] uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55">
+                  <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55">
                     {tWork('selected')}
                   </p>
                   <Link
                     href="/work"
                     onClick={() => setOpen(false)}
-                    className="focus-ring text-[11px] font-medium uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 hover:text-bone transition-colors inline-flex items-center gap-2"
+                    className="focus-ring text-[11px] rtl:text-sm font-medium uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 hover:text-bone transition-colors inline-flex items-center gap-2"
                   >
                     {tWork('allWork')}
                     <span aria-hidden className="inline-block rtl:rotate-180">→</span>

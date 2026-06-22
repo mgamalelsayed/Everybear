@@ -104,7 +104,7 @@ export function MobileMenu() {
 
                 {/* Work shortcut list */}
                 <div className="mt-12 pt-8 border-t hairline">
-                  <p className="font-medium text-[11px] uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 mb-5">
+                  <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 mb-5">
                     {tWork('selected')}
                   </p>
                   <ul className="space-y-3">

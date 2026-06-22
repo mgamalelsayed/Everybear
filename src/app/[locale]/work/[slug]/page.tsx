@@ -68,7 +68,7 @@ function WorkPageContent({ brand }: { brand: Brand }) {
           </SectionReveal>
 
           <SectionReveal delay={0.05}>
-            <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
               {tag}
             </p>
           </SectionReveal>
@@ -117,7 +117,7 @@ function WorkPageContent({ brand }: { brand: Brand }) {
         <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-40">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             <SectionReveal>
-              <p className="md:col-span-4 font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
+              <p className="md:col-span-4 font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
                 {t('overview')}
               </p>
             </SectionReveal>
@@ -149,7 +149,7 @@ function WorkPageContent({ brand }: { brand: Brand }) {
       <section className="border-b hairline">
         <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
           <SectionReveal>
-            <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-10 md:mb-14">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-10 md:mb-14">
               {t('fromStudio')}
             </p>
           </SectionReveal>
@@ -165,7 +165,7 @@ function WorkPageContent({ brand }: { brand: Brand }) {
         >
           <div className="mx-auto max-w-wide px-6 md:px-10 py-20 md:py-28 flex items-center justify-between gap-8">
             <div className="min-w-0">
-              <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-4">
+              <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-4">
                 {t('nextProject')}
               </p>
               <p className="font-condensed font-black uppercase leading-none tracking-[-0.025em] rtl:leading-[1.1] rtl:tracking-normal text-display-lg truncate">

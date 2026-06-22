@@ -88,7 +88,7 @@ export function ConnectForm() {
 
       {/* Services */}
       <fieldset className="mb-10 md:mb-14">
-        <legend className="font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
+        <legend className="font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-4">
           {t('services.label')}
         </legend>
         <Controller
@@ -293,7 +293,7 @@ function Field({
     <div className={className}>
       <label
         htmlFor={id}
-        className="block font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-2"
+        className="block font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-2"
       >
         {label}
       </label>

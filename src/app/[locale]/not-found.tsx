@@ -10,7 +10,7 @@ export default function NotFound() {
     <section className="min-h-[80vh] flex items-center">
       <div className="mx-auto max-w-wide px-6 md:px-10 py-32 grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
         <div className="md:col-span-7">
-          <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-8">
+          <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-8">
             404
           </p>
           <h1 className="font-condensed font-black uppercase leading-[0.92] tracking-[-0.02em] rtl:leading-[1.1] rtl:tracking-normal text-display-xl">

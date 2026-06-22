@@ -33,7 +33,7 @@ function StudioContent() {
       <section className="pt-40 md:pt-56 pb-24 md:pb-40 border-b hairline">
         <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
               {isAr ? 'الاستوديو' : 'Studio'}
             </p>
           </SectionReveal>
@@ -69,7 +69,7 @@ function StudioContent() {
                     <p className="font-condensed font-black uppercase text-bone/15 text-[200px] leading-none">
                       AS
                     </p>
-                    <p className="absolute bottom-2 left-0 right-0 font-medium text-[11px] uppercase tracking-widest rtl:tracking-normal text-bone/55">
+                    <p className="absolute bottom-2 left-0 right-0 font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55">
                       {isAr ? 'صورة عمرو صفوت ستُضاف هنا' : 'Photo of Amr Safwat goes here'}
                     </p>
                   </div>
@@ -79,7 +79,7 @@ function StudioContent() {
 
             <div className="md:col-span-6 md:col-start-7">
               <SectionReveal>
-                <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-4">
+                <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-4">
                   {isAr ? 'المؤسّس' : 'Founder'}
                 </p>
               </SectionReveal>
@@ -116,7 +116,7 @@ function StudioContent() {
       <section className="border-b hairline">
         <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-40">
           <SectionReveal>
-            <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
               {isAr ? 'كيف نعمل' : 'How we work'}
             </p>
           </SectionReveal>
@@ -190,7 +190,7 @@ function StudioContent() {
       <section className="border-b hairline">
         <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-32">
           <SectionReveal>
-            <p className="font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-8">
+            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-8">
               {isAr ? 'موثوقون من قِبَل' : 'Trusted by'}
             </p>
           </SectionReveal>

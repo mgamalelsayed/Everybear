@@ -14,7 +14,7 @@ export function FounderCard() {
           AS
         </div>
         <div className="min-w-0">
-          <p className="text-[11px] font-medium uppercase tracking-widest rtl:tracking-normal text-bone/55">
+          <p className="text-[11px] rtl:text-sm font-medium uppercase tracking-widest rtl:tracking-normal text-bone/55">
             {t('name')}
           </p>
           <p className="text-base md:text-lg font-medium truncate">

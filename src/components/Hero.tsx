@@ -57,7 +57,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 1.7, ease }}
           className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-end"
         >
-          <p className="md:col-span-5 font-medium text-[11px] uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
+          <p className="md:col-span-5 font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
             {t('eyebrow')}
           </p>
           <p className="md:col-span-5 md:col-start-8 text-base md:text-lg leading-relaxed rtl:leading-[1.85] text-bone/85 max-w-prose">
@@ -110,7 +110,7 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 2.4 }}
         className="absolute bottom-6 inset-x-0 z-10 flex justify-center"
       >
-        <span className="font-medium text-[10px] uppercase tracking-[0.4em] rtl:tracking-normal text-bone/55">
+        <span className="font-medium text-[10px] rtl:text-sm uppercase tracking-[0.4em] rtl:tracking-normal text-bone/55">
           ↓ Scroll
         </span>
       </motion.div>
