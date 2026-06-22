@@ -21,7 +21,7 @@ export function Clients() {
       >
         <span
           className="clients-backdrop font-condensed font-black uppercase leading-none tracking-[-0.04em] text-bone opacity-0 transition-opacity duration-700 ease-smooth whitespace-nowrap"
-          style={{ fontSize: 'clamp(8rem, 22vw, 22rem)' }}
+          style={{ fontSize: 'clamp(3rem, 16vw, 22rem)' }}
         >
           Everybear
         </span>
