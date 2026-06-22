@@ -125,9 +125,14 @@
           "cnc": "CNC & Maquettes",
           "events": "Event Production",
           "print": "Print & Publications",
-          "outdoor": "Outdoor & Billboards",
+          "giveaway": "Giveaways",
+          "video": "Video Ads",
           "other": "Something else"
         }
+      },
+      "otherService": {
+        "label": "Tell us what",
+        "placeholder": "Briefly describe what you need"
       },
       "name": {
         "label": "Name",
@@ -172,6 +177,7 @@
         "services": "Pick at least one, even if it's “Something else.”",
         "required": "Required.",
         "email": "Use a valid email.",
+        "otherService": "Tell us briefly what you need.",
         "submit": "Something went wrong. Try again or email info@everybear.net."
       }
     },

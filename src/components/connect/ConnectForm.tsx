@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   REFERRAL_SOURCES,
   SERVICES,
@@ -28,12 +28,14 @@ export function ConnectForm() {
     register,
     control,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<ConnectFormValues>({
     resolver: zodResolver(connectSchema),
     mode: 'onSubmit',
     defaultValues: {
       services: [],
+      otherService: '',
       name: '',
       company: '',
       phone: '',
@@ -43,6 +45,9 @@ export function ConnectForm() {
       referral: undefined,
     },
   });
+
+  const services = watch('services');
+  const otherSelected = services.includes('other');
 
   const onSubmit = async (values: ConnectFormValues) => {
     setStatus('submitting');
@@ -132,6 +137,38 @@ export function ConnectForm() {
             {t('errors.services')}
           </p>
         )}
+
+        {/* Reveals when "Something else" is selected. Brief text to clarify. */}
+        <AnimatePresence initial={false}>
+          {otherSelected && (
+            <motion.div
+              key="otherService"
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, height: 'auto', marginTop: 24 }}
+              exit={{ opacity: 0, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.35, ease: [0.6, 0.05, 0.05, 1] }}
+              className="overflow-hidden"
+            >
+              <label
+                htmlFor="otherService"
+                className="block font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-2"
+              >
+                {t('otherService.label')}
+              </label>
+              <input
+                id="otherService"
+                placeholder={t('otherService.placeholder')}
+                className={fieldCls}
+                {...register('otherService')}
+              />
+              {errors.otherService && (
+                <p className="mt-2 text-xs text-bone/85" role="alert">
+                  {t('errors.otherService')}
+                </p>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </fieldset>
 
       {/* Identity row */}

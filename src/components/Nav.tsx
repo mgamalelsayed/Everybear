@@ -28,7 +28,7 @@ export function Nav() {
     >
       <div className="mx-auto max-w-wide flex items-center justify-between px-6 md:px-10 h-20 md:h-36">
         <Link href="/" className="focus-ring inline-flex items-center" aria-label="Everybear, home">
-          <Logo variant="compact" className="h-14 md:h-28 w-auto" />
+          <Logo variant="icon" className="h-12 md:h-16 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-[13px] tracking-wide">

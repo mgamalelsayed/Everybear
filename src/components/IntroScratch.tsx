@@ -8,11 +8,11 @@ const ease = [0.65, 0.02, 0.05, 1] as const;
 /**
  * Bear scratch intro:
  *  - t=0:    fills the viewport, opacity 1
- *  - t=1.2s: starts shrinking + drifting toward background
- *  - t=2.4s: settled as a faded watermark behind the hero
+ *  - t=0.35s: starts shrinking + fading out
+ *  - t=1.95s: fully gone — no watermark left behind
  *
- * The element stays on the page after settling so it reads as the
- * hero's background mark, not a one-shot loader.
+ * One-shot loader. Once the animation completes the element is invisible
+ * (opacity 0) and pointer-events-none.
  */
 export function IntroScratch() {
   return (
@@ -25,7 +25,7 @@ export function IntroScratch() {
     >
       <motion.div
         initial={{ scale: 1.8, opacity: 0.95 }}
-        animate={{ scale: 0.55, opacity: 0.08 }}
+        animate={{ scale: 0.4, opacity: 0 }}
         transition={{
           duration: 1.6,
           delay: 0.35,

@@ -1,28 +1,32 @@
 import Image from 'next/image';
 
 /**
- * Wordmark + bear. Single source so Nav and Footer stay in sync.
+ * Brand mark. Three variants:
+ *  - icon:    bear silhouette only (no wordmark) — for tight spots like nav
+ *  - compact: bear + EVERYBEAR stacked
+ *  - full:    bear + EVERYBEAR + Advertising Agency
  */
 export function Logo({
   variant = 'compact',
   className = '',
 }: {
-  variant?: 'compact' | 'full';
+  variant?: 'icon' | 'compact' | 'full';
   className?: string;
 }) {
-  const src =
-    variant === 'full' ? '/logo-everybear-full.svg' : '/logo-everybear.svg';
-  // Native aspect ratios from the source SVG viewBoxes (after cropping internal whitespace)
-  const ratio = variant === 'full' ? 433.16 / 191.94 : 158 / 133;
+  const config = {
+    icon: { src: '/logo-everybear-icon.svg', ratio: 95 / 115 },
+    compact: { src: '/logo-everybear.svg', ratio: 158 / 133 },
+    full: { src: '/logo-everybear-full.svg', ratio: 370 / 125 },
+  }[variant];
 
   return (
     <span
       aria-label="Everybear"
       className={`relative block ${className}`}
-      style={{ aspectRatio: ratio }}
+      style={{ aspectRatio: config.ratio }}
     >
       <Image
-        src={src}
+        src={config.src}
         alt="Everybear"
         fill
         priority

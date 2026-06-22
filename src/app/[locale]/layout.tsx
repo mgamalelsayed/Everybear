@@ -83,12 +83,14 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
-  const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
+  // Layout stays LTR for both locales — only the visible text is translated.
+  // Browsers still render Arabic glyphs right-to-left at the word level via
+  // the Unicode BiDi algorithm; structural direction does not flip.
   return (
     <html
       lang={locale}
-      dir={dir}
+      dir="ltr"
       className={`${helvetica.variable} ${helveticaCondensed.variable}`}
     >
       <body className="bg-ink text-bone min-h-screen flex flex-col">

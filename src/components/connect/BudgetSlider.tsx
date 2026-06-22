@@ -41,7 +41,7 @@ export function BudgetSlider({
 }) {
   const locale = useLocale();
   const isAr = locale === 'ar';
-  const [currency, setCurrency] = useState<Currency>('USD');
+  const [currency, setCurrency] = useState<Currency>('EGP');
 
   const fill = useMemo(() => {
     const pct = ((value - BUDGET_MIN_USD) / (BUDGET_MAX_USD - BUDGET_MIN_USD)) * 100;
