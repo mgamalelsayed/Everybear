@@ -51,7 +51,16 @@ export function BudgetSlider({
   return (
     <div>
       <div className="flex items-center justify-between gap-4 mb-5">
-        <label htmlFor="budget" className="text-sm md:text-base text-bone/85">
+        {/*
+          Local dir override on the label so the inline label+value reads in
+          natural language order even though the page layout stays LTR. In
+          Arabic the label sits on the right and the value sits on the left.
+        */}
+        <label
+          htmlFor="budget"
+          dir={isAr ? 'rtl' : 'ltr'}
+          className="text-sm md:text-base text-bone/85"
+        >
           {label}{' '}
           <span dir="ltr" className="text-bone font-medium ms-2 inline-block">
             {format(value, currency)}
