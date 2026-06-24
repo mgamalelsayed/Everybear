@@ -70,8 +70,8 @@ export function Clients() {
     };
   }, []);
 
-  // Wheel → horizontal nudge. Bound to the strip container so vertical wheel
-  // outside the strip still scrolls the page normally.
+  // Wheel + touch → horizontal nudge. Bound to the strip container so vertical
+  // wheel/touch outside the strip still scrolls the page normally.
   useEffect(() => {
     const strip = trackRef.current?.parentElement;
     if (!strip) return;
@@ -84,8 +84,58 @@ export function Clients() {
       offsetRef.current -= delta;
     };
 
+    // Touch: track finger horizontal delta and apply directly. Decide on the
+    // first move whether the gesture is horizontal — if it is, we hijack it
+    // and pause auto-drift; if vertical, we let the page scroll normally.
+    let touchX = 0;
+    let touchY = 0;
+    let mode: 'undecided' | 'horizontal' | 'vertical' = 'undecided';
+
+    const onTouchStart = (e: TouchEvent) => {
+      const t = e.touches[0];
+      touchX = t.clientX;
+      touchY = t.clientY;
+      mode = 'undecided';
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const t = e.touches[0];
+      const dx = t.clientX - touchX;
+      const dy = t.clientY - touchY;
+
+      if (mode === 'undecided') {
+        // Decide once the finger has moved >8px in either axis.
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        mode = Math.abs(dx) > Math.abs(dy) ? 'horizontal' : 'vertical';
+        if (mode === 'horizontal') pausedRef.current = true;
+      }
+
+      if (mode === 'horizontal') {
+        e.preventDefault();
+        offsetRef.current += dx;
+        touchX = t.clientX;
+        touchY = t.clientY;
+      }
+    };
+
+    const onTouchEnd = () => {
+      pausedRef.current = false;
+      mode = 'undecided';
+    };
+
     strip.addEventListener('wheel', onWheel, { passive: false });
-    return () => strip.removeEventListener('wheel', onWheel);
+    strip.addEventListener('touchstart', onTouchStart, { passive: true });
+    strip.addEventListener('touchmove', onTouchMove, { passive: false });
+    strip.addEventListener('touchend', onTouchEnd, { passive: true });
+    strip.addEventListener('touchcancel', onTouchEnd, { passive: true });
+
+    return () => {
+      strip.removeEventListener('wheel', onWheel);
+      strip.removeEventListener('touchstart', onTouchStart);
+      strip.removeEventListener('touchmove', onTouchMove);
+      strip.removeEventListener('touchend', onTouchEnd);
+      strip.removeEventListener('touchcancel', onTouchEnd);
+    };
   }, []);
 
   return (
