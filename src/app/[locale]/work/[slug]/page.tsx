@@ -117,7 +117,7 @@ function WorkPageContent({ brand }: { brand: Brand }) {
 
       {/* Overview */}
       <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-40">
+        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             <SectionReveal>
               <p className="md:col-span-4 font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">

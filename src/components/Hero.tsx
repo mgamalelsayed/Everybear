@@ -44,7 +44,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 1.2, ease }}
           className="font-condensed font-black leading-[0.86] tracking-[-0.025em] uppercase select-none -ms-[0.04em]"
-          style={{ fontSize: 'clamp(4rem, 15vw, 14rem)' }}
+          style={{ fontSize: 'clamp(2.75rem, 15vw, 14rem)' }}
         >
           <span className="block">Everybear</span>
           <span className="block">Everywhere</span>

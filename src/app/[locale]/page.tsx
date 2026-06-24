@@ -16,9 +16,9 @@ export default async function HomePage({
   return (
     <>
       <Hero />
+      <Clients />
       <SelectedWork />
       <Capabilities />
-      <Clients />
       <CtaBlock />
     </>
   );

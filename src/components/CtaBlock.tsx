@@ -9,7 +9,7 @@ export function CtaBlock() {
 
   return (
     <section className="border-b hairline">
-      <div className="mx-auto max-w-wide px-6 md:px-10 py-32 md:py-52">
+      <div className="mx-auto max-w-wide px-6 md:px-10 py-20 md:py-32">
         <SectionReveal>
           <h2 className="font-medium text-display-xl max-w-[16ch] leading-[1.05] rtl:leading-[1.25]">
             {t('headline')}

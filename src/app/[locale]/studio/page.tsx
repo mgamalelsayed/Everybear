@@ -30,7 +30,7 @@ function StudioContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 md:pt-56 pb-24 md:pb-40 border-b hairline">
+      <section className="pt-40 md:pt-56 pb-16 md:pb-24 border-b hairline">
         <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
             <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
@@ -56,7 +56,7 @@ function StudioContent() {
 
       {/* Founder */}
       <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-40">
+        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
             <SectionReveal>
               <div className="md:col-span-5">
@@ -114,7 +114,7 @@ function StudioContent() {
 
       {/* Principles */}
       <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-40">
+        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
           <SectionReveal>
             <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
               {isAr ? 'كيف نعمل' : 'How we work'}
@@ -152,7 +152,7 @@ function StudioContent() {
 
       {/* Offices */}
       <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-40">
+        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             <SectionReveal>
               <h2 className="md:col-span-7 font-condensed font-black uppercase leading-[0.95] tracking-[-0.02em] rtl:leading-[1.15] rtl:tracking-normal text-display-lg">
@@ -199,7 +199,7 @@ function StudioContent() {
               {CLIENTS.slice(0, 16).map((c) => (
                 <li key={c.slug} className="relative aspect-[3/2] flex items-center justify-center">
                   <Image
-                    src={`/clients/${c.slug}.png`}
+                    src={`/clients/${c.slug}.${c.ext ?? 'png'}`}
                     alt={c.name}
                     fill
                     sizes="(max-width: 768px) 30vw, 12vw"

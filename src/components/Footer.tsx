@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-20">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-6">
           <div className="col-span-2 md:col-span-5">
-            <Logo variant="full" className="h-36 md:h-48 w-auto mb-12" />
+            <Logo variant="full" className="h-14 md:h-20 w-auto mb-10" />
             <Link
               href="/connect"
               className="focus-ring inline-block text-display-md font-medium group"
