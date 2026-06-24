@@ -161,7 +161,7 @@ export function Clients() {
         </span>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-wide px-6 md:px-10 pt-16 md:pt-24 pb-10 md:pb-14">
+      <div className="relative z-10 mx-auto max-w-wide px-6 md:px-10 pt-8 md:pt-12 pb-10 md:pb-14">
         <SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 md:mb-16">
             <h2 className="md:col-span-7 font-medium text-display-lg">

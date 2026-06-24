@@ -8,7 +8,7 @@ export function Capabilities() {
 
   return (
     <section id="capabilities" className="border-b hairline">
-      <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
+      <div className="mx-auto max-w-wide px-6 md:px-10 pt-16 md:pt-24 pb-10 md:pb-12">
         <SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 md:mb-24">
             <h2 className="md:col-span-7 font-medium text-display-lg">

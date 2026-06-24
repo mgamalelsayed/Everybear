@@ -37,7 +37,7 @@ export function Hero() {
 
       <IntroScratch />
 
-      <div className="relative z-10 mx-auto max-w-wide px-6 md:px-10 min-h-screen flex flex-col justify-center pt-28 pb-20">
+      <div className="relative z-10 mx-auto max-w-wide px-6 md:px-10 min-h-screen flex flex-col justify-center pt-28 pb-10">
         {/* Slogan, always English, this is the brand mark */}
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
