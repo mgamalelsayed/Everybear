@@ -7,6 +7,8 @@ import { routing } from '@/i18n/routing';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { Analytics } from '@/components/Analytics';
+import { SmoothScroll } from '@/components/SmoothScroll';
+import { BearBackdrop } from '@/components/BearBackdrop';
 import '../globals.css';
 
 /**
@@ -94,9 +96,11 @@ export default async function LocaleLayout({
       className={`${helvetica.variable} ${helveticaCondensed.variable}`}
     >
       <body className="bg-ink text-bone min-h-screen flex flex-col">
+        <SmoothScroll />
+        <BearBackdrop />
         <NextIntlClientProvider messages={messages}>
           <Nav />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 relative z-10">{children}</main>
           <Footer />
         </NextIntlClientProvider>
         <Analytics />

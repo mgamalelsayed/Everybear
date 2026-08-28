@@ -29,6 +29,9 @@ const config: Config = {
       },
       fontSize: {
         'display-xl': ['clamp(3.25rem, 9vw, 9rem)', { lineHeight: '0.9', letterSpacing: '-0.035em' }],
+        // Section headings. Deliberately the size the Capabilities list items
+        // used to be, so the two swapped places.
+        'display-section': ['clamp(2.5rem, 8vw, 7rem)', { lineHeight: '0.9', letterSpacing: '-0.035em' }],
         'display-lg': ['clamp(2.25rem, 5.5vw, 4.5rem)', { lineHeight: '0.95', letterSpacing: '-0.025em' }],
         'display-md': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1.05', letterSpacing: '-0.015em' }],
       },

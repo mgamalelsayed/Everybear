@@ -30,22 +30,15 @@ function StudioContent() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 md:pt-56 pb-16 md:pb-24 border-b hairline">
+      <section className="relative pt-40 md:pt-52 pb-12 md:pb-16 overflow-hidden">
         <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
-              {isAr ? 'الاستوديو' : 'Studio'}
-            </p>
-          </SectionReveal>
-          <SectionReveal delay={0.05}>
-            <h1 className="font-condensed font-black uppercase leading-[0.92] tracking-[-0.02em] rtl:leading-[1.1] rtl:tracking-normal text-display-xl max-w-[16ch]">
-              {isAr
-                ? 'علاماتٌ تُصنع باليد.'
-                : 'Brands made by hand.'}
+            <h1 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-xl max-w-[14ch]">
+              {isAr ? 'علاماتٌ تُصنع باليد.' : 'Brands made by hand.'}
             </h1>
           </SectionReveal>
           <SectionReveal delay={0.15}>
-            <p className="mt-10 md:mt-14 max-w-2xl text-base md:text-xl text-bone/85 leading-relaxed rtl:leading-[1.85]">
+            <p className="mt-10 md:mt-14 max-w-2xl text-lg md:text-2xl text-bone/85 leading-relaxed">
               {isAr
                 ? 'إيفري بير ليس وكالة فحسب. إنّه قبيلة من المفكّرين والصنّاع والحالمين. فريقنا يجمع بين العقول المبدعة والأيادي الماهرة، تحت مهمّةٍ واحدة: بناء علامات تترك أثرًا.'
                 : 'Everybear is more than an agency. It is a tribe of thinkers, makers, doers, and dreamers. Our team brings together a rare blend of creative minds and skilled hands, all united by one mission: to build brands that leave a mark.'}
@@ -55,21 +48,20 @@ function StudioContent() {
       </section>
 
       {/* Founder */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
+      <section className="py-12 md:py-20">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <SectionReveal>
-              <div className="md:col-span-5">
+            <SectionReveal className="md:col-span-5">
+              <div>
                 <div
                   aria-hidden
-                  className="relative aspect-[4/5] rounded-card bg-surface overflow-hidden flex items-end justify-start p-8 md:p-10"
+                  className="relative aspect-[4/5] rounded-xl bg-bone/5 border border-bone/10 backdrop-blur-sm overflow-hidden flex items-end p-8 md:p-10 shadow-[0_50px_100px_-50px_rgba(0,0,0,0.9)]"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-bone/8 via-transparent to-transparent" />
                   <div className="relative">
-                    <p className="font-condensed font-black uppercase text-bone/15 text-[200px] leading-none">
+                    <p className="font-condensed font-black uppercase text-bone/10 text-[180px] leading-none">
                       AS
                     </p>
-                    <p className="absolute bottom-2 left-0 right-0 font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55">
+                    <p className="absolute bottom-2 left-0 right-0 font-medium text-[11px] uppercase tracking-widest text-bone/45">
                       {isAr ? 'صورة عمرو صفوت ستُضاف هنا' : 'Photo of Amr Safwat goes here'}
                     </p>
                   </div>
@@ -79,17 +71,12 @@ function StudioContent() {
 
             <div className="md:col-span-6 md:col-start-7">
               <SectionReveal>
-                <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-4">
-                  {isAr ? 'المؤسّس' : 'Founder'}
-                </p>
-              </SectionReveal>
-              <SectionReveal delay={0.05}>
-                <h2 className="font-condensed font-black uppercase leading-[0.95] tracking-[-0.02em] rtl:leading-[1.15] rtl:tracking-normal text-display-md md:text-display-lg mb-8">
+                <h2 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg mb-10">
                   {isAr ? 'عمرو صفوت' : 'Amr Safwat'}
                 </h2>
               </SectionReveal>
               <SectionReveal delay={0.1}>
-                <div className="space-y-5 text-base md:text-lg text-bone/85 leading-relaxed rtl:leading-[1.85]">
+                <div className="space-y-6 text-base md:text-lg text-bone/85 leading-relaxed">
                   <p>
                     {isAr
                       ? 'في قلب إيفري بير، عمرو صفوت. حِرفي شغوف ورجل أعمال بصير، وضع أساس الوكالة بيديه. حرفيًّا.'
@@ -112,23 +99,16 @@ function StudioContent() {
         </div>
       </section>
 
-      {/* Principles */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
+      {/* Principles — giant words */}
+      <section className="py-12 md:py-20">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
-              {isAr ? 'كيف نعمل' : 'How we work'}
-            </p>
-          </SectionReveal>
-          <SectionReveal delay={0.05}>
-            <h2 className="font-condensed font-black uppercase leading-[0.95] tracking-[-0.02em] rtl:leading-[1.15] rtl:tracking-normal text-display-lg max-w-4xl mb-16 md:mb-24">
-              {isAr
-                ? 'أربعة مبادئ، تظهر في كل تسليم.'
-                : 'Four principles. They show up in every delivery.'}
+            <h2 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg max-w-4xl mb-10 md:mb-16">
+              {isAr ? 'أربعة مبادئ، تظهر في كل تسليم.' : 'Four principles. They show up in every delivery.'}
             </h2>
           </SectionReveal>
 
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
+          <ul>
             {[
               { en: ['Craft first', 'We design what we can build. The idea on the deck is the idea on the shelf, with no hand-offs lost in translation.'], ar: ['الحِرفة أوّلاً', 'نُصمّم ما نقدر على صنعه. الفكرة في العرض هي الفكرة على الرفّ، دون فقدان في التسليم.'] },
               { en: ['One workshop', 'Strategy, design, and production sit at the same table. Decisions move faster, mistakes get caught earlier.'], ar: ['ورشة واحدة', 'الاستراتيجيّة والتصميم والإنتاج تحت سقفٍ واحد. القرارات تسير أسرع، والأخطاء تُكتشف أبكر.'] },
@@ -138,10 +118,18 @@ function StudioContent() {
               const [title, body] = isAr ? p.ar : p.en;
               return (
                 <SectionReveal key={title} delay={i * 0.05}>
-                  <li>
-                    <p className="font-medium text-xs text-bone/55 tabular-nums mb-3">{String(i + 1).padStart(2, '0')}</p>
-                    <h3 className="font-condensed font-black uppercase text-2xl md:text-3xl leading-tight rtl:leading-snug mb-4">{title}</h3>
-                    <p className="text-base md:text-lg text-bone/85 leading-relaxed rtl:leading-[1.85] max-w-md">{body}</p>
+                  <li className="group border-b hairline first:border-t">
+                    <div className="grid grid-cols-12 gap-4 py-10 md:py-14 items-end">
+                      <span className="col-span-1 font-medium text-xs text-bone/40 tabular-nums pt-2">
+                        {i + 1}
+                      </span>
+                      <h3 className="col-span-11 md:col-span-7 font-condensed font-black uppercase leading-[0.85] tracking-[-0.035em] text-[clamp(2.25rem,7vw,6rem)] text-bone/40 group-hover:text-bone transition-colors duration-700 group-hover:translate-x-2 ease-smooth">
+                        {title}
+                      </h3>
+                      <p className="col-span-12 md:col-span-4 md:col-start-9 text-base md:text-lg text-bone/75 leading-relaxed">
+                        {body}
+                      </p>
+                    </div>
                   </li>
                 </SectionReveal>
               );
@@ -151,16 +139,18 @@ function StudioContent() {
       </section>
 
       {/* Offices */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <SectionReveal>
-              <h2 className="md:col-span-7 font-condensed font-black uppercase leading-[0.95] tracking-[-0.02em] rtl:leading-[1.15] rtl:tracking-normal text-display-lg">
-                {isAr ? 'إيفري بير، في كلّ مكان.' : 'Everybear, everywhere.'}
-              </h2>
+      <section className="py-12 md:py-20">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10 md:mb-14">
+            <SectionReveal className="md:col-span-7">
+              <div>
+                <h2 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg">
+                  {isAr ? 'إيفري بير، في كلّ مكان.' : 'Everybear, everywhere.'}
+                </h2>
+              </div>
             </SectionReveal>
-            <SectionReveal delay={0.1}>
-              <p className="md:col-span-4 md:col-start-9 text-base md:text-lg text-bone/85 leading-relaxed rtl:leading-[1.85]">
+            <SectionReveal delay={0.1} className="md:col-span-4 md:col-start-9 self-end">
+              <p className="text-base md:text-lg text-bone/75 leading-relaxed">
                 {isAr
                   ? 'مقرّنا في القاهرة، بفريقَين متعاوِنَين في الدوحة وتورنتو. نعمل بمنطقة توقيت الشرق الأوسط، ونُسلّم في كلّ مكان.'
                   : 'Headquartered in Cairo, with collaborator teams in Doha and Toronto. We run on MENA time, deliver everywhere.'}
@@ -168,17 +158,19 @@ function StudioContent() {
             </SectionReveal>
           </div>
 
-          <ul className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-px bg-line border hairline">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {[
               { en: 'Cairo', ar: 'القاهرة', addr1: 'St. 206, Villa 8, Maadi', addr2: 'Manufacturing: 444 Haram St, Nasr El-Din' },
               { en: 'Doha', ar: 'الدوحة', addr1: 'Qatar regional office', addr2: '' },
               { en: 'Toronto', ar: 'تورنتو', addr1: 'Canada regional office', addr2: '' },
             ].map((o, i) => (
-              <SectionReveal key={o.en} delay={i * 0.05}>
-                <li className="bg-ink p-8 md:p-10">
-                  <p className="font-condensed font-black uppercase text-3xl md:text-4xl mb-4">{isAr ? o.ar : o.en}</p>
+              <SectionReveal key={o.en} delay={i * 0.06}>
+                <li className="group rounded-xl bg-bone/5 border border-bone/10 backdrop-blur-sm p-8 md:p-10 transition-all duration-500 hover:bg-bone/10 hover:-translate-y-1">
+                  <p className="font-condensed font-black uppercase text-4xl md:text-5xl mb-5 leading-none">
+                    {isAr ? o.ar : o.en}
+                  </p>
                   <p className="text-sm md:text-base text-bone/85">{o.addr1}</p>
-                  {o.addr2 && <p className="mt-1 text-sm md:text-base text-bone/55">{o.addr2}</p>}
+                  {o.addr2 && <p className="mt-1.5 text-sm md:text-base text-bone/55">{o.addr2}</p>}
                 </li>
               </SectionReveal>
             ))}
@@ -187,23 +179,28 @@ function StudioContent() {
       </section>
 
       {/* Clients teaser */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-32">
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-8">
+            {/* Promoted from an eyebrow to a real heading: this grid has no
+                other label, unlike the home page where the h2 already says it. */}
+            <h2 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg mb-10">
               {isAr ? 'موثوقون من قِبَل' : 'Trusted by'}
-            </p>
+            </h2>
           </SectionReveal>
           <SectionReveal delay={0.05}>
-            <ul className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-x-6 gap-y-8 items-center">
+            <ul className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4">
               {CLIENTS.slice(0, 16).map((c) => (
-                <li key={c.slug} className="relative aspect-[3/2] flex items-center justify-center">
+                <li
+                  key={c.slug}
+                  className="relative aspect-[3/2] bg-white/85 rounded-md overflow-hidden hover:bg-white transition-colors duration-300"
+                >
                   <Image
                     src={`/clients/${c.slug}.${c.ext ?? 'png'}`}
                     alt={c.name}
                     fill
                     sizes="(max-width: 768px) 30vw, 12vw"
-                    className="object-contain opacity-85 hover:opacity-100 transition-opacity"
+                    className="object-contain p-3"
                   />
                 </li>
               ))}
@@ -213,10 +210,10 @@ function StudioContent() {
       </section>
 
       {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-24 md:py-32">
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <h2 className="md:col-span-7 font-condensed font-black uppercase leading-[0.95] tracking-[-0.02em] rtl:leading-[1.15] rtl:tracking-normal text-display-lg">
+            <h2 className="md:col-span-7 font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg">
               {t('ctaBlock.headline')}
             </h2>
             <div className="md:col-span-5 md:justify-self-end">

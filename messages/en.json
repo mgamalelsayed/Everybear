@@ -74,6 +74,8 @@
   "clients": {
     "headline": "Trusted by.",
     "lede": "A short list of long-term partners. Some you'll know. Some you've eaten off the shelf without realising.",
+    "hintHover": "Hover to unfold",
+    "hintTap": "Tap to unfold",
     "names": [
       "Americana",
       "Huawei",
@@ -91,6 +93,37 @@
       "Zanussi",
       "Hardees"
     ]
+  },
+  "process": {
+    "headline": "From first call to launch.",
+    "lede": "One team carries your project from the first conversation to the day it stands in public. No hand-offs, no telephone game.",
+    "hint": "Drag to explore",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "body": "A first conversation about your brand, your market, and what you need to happen. We listen before we sketch."
+      },
+      "scoping": {
+        "title": "Scoping",
+        "body": "We turn the conversation into a clear scope: deliverables, timeline, and a budget that fits the job."
+      },
+      "proposal": {
+        "title": "Proposal",
+        "body": "Concept directions with real visuals, a fixed quote, and a schedule. You know exactly what you are signing."
+      },
+      "design": {
+        "title": "Design",
+        "body": "Sketches become artwork. We iterate with you until every detail earns its place, then prepare files for production."
+      },
+      "production": {
+        "title": "Production",
+        "body": "Printing, CNC, fabrication, and finishing in our own workshop. The design team stays in the room."
+      },
+      "launch": {
+        "title": "Launch",
+        "body": "Installation, delivery, or event day. We are on site until it stands, works, and looks right."
+      }
+    }
   },
   "ctaBlock": {
     "headline": "Got a brand to launch, refresh, or rescue?",

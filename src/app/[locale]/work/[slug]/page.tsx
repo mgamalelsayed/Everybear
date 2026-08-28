@@ -35,7 +35,6 @@ export default async function WorkPage({
   setRequestLocale(locale);
   const brand = findBrand(slug);
   if (!brand) notFound();
-  // Pre-fetch translations on the server for the client child
   await getTranslations('work');
   return <WorkPageContent brand={brand} />;
 }
@@ -55,79 +54,89 @@ function WorkPageContent({ brand }: { brand: Brand }) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-40 md:pt-56 pb-16 md:pb-24 border-b hairline">
+      {/* Hero: giant backplate name behind a floating hero card */}
+      <section className="relative pt-36 md:pt-48 pb-12 md:pb-16 overflow-hidden">
         <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
             <Link
               href="/work"
-              className="focus-ring inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] rtl:tracking-normal text-bone/55 hover:text-bone transition-colors mb-10"
+              className="focus-ring inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-bone/55 hover:text-bone transition-colors mb-12"
             >
-              <span className="inline-block rotate-180 rtl:rotate-0">
+              <span className="inline-block rotate-180">
                 <Arrow className="w-4 h-4" />
               </span>
               {t('allWork')}
             </Link>
           </SectionReveal>
 
-          <SectionReveal delay={0.05}>
-            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-6">
-              {tag}
-            </p>
-          </SectionReveal>
+          <div className="relative">
+            {/* Backplate name */}
+            <SectionReveal>
+              <p
+                aria-hidden
+                className="pointer-events-none select-none absolute -top-8 md:-top-16 left-1/2 -translate-x-1/2 font-condensed font-black uppercase leading-none tracking-[-0.04em] whitespace-nowrap text-bone/[0.07]"
+                style={{ fontSize: 'clamp(5rem, 20vw, 20rem)' }}
+              >
+                {client}
+              </p>
+            </SectionReveal>
 
-          <SectionReveal delay={0.1}>
-            <h1 className="font-condensed font-black uppercase leading-[0.92] tracking-[-0.02em] rtl:leading-[1.1] rtl:tracking-normal text-display-xl">
-              {client}
-            </h1>
-          </SectionReveal>
+            {/* Floating hero card */}
+            <SectionReveal delay={0.1}>
+              <div className="relative max-w-4xl mx-auto mt-12 md:mt-20">
+                <div className="relative aspect-[16/10] md:aspect-[16/9] bg-white/90 rounded-xl overflow-hidden shadow-[0_60px_120px_-40px_rgba(0,0,0,0.9)]">
+                  <Image
+                    src={brand.hero}
+                    alt={client}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 80vw"
+                    className="object-contain p-8 md:p-14"
+                  />
+                </div>
+              </div>
+            </SectionReveal>
+          </div>
 
+          {/* Title + scope chips */}
           <SectionReveal delay={0.2}>
-            <ul className="mt-12 md:mt-16 flex flex-wrap gap-2 max-w-3xl">
-              {scope.map((s) => (
-                <li
-                  key={s}
-                  className="rounded-full border hairline px-4 py-2 text-xs md:text-sm text-bone/85"
-                >
-                  {s}
-                </li>
-              ))}
-            </ul>
-          </SectionReveal>
-        </div>
-      </section>
-
-      {/* Cover image */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-10 md:py-16">
-          <SectionReveal>
-            <div className="relative aspect-[16/10] md:aspect-[16/9] overflow-hidden rounded-card bg-surface">
-              <Image
-                src={brand.hero}
-                alt={client}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 90vw"
-                className="object-contain p-8 md:p-16"
-              />
+            <div className="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+              <div>
+                <p className="font-medium text-[11px] uppercase tracking-[0.3em] text-bone/55 mb-4">
+                  {tag}
+                </p>
+                <h1 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg">
+                  {client}
+                </h1>
+              </div>
+              <ul className="flex flex-wrap gap-2 md:justify-end max-w-md">
+                {scope.map((s) => (
+                  <li
+                    key={s}
+                    className="rounded-full border border-bone/15 bg-bone/5 backdrop-blur-sm px-4 py-2 text-xs md:text-sm text-bone/85"
+                  >
+                    {s}
+                  </li>
+                ))}
+              </ul>
             </div>
           </SectionReveal>
         </div>
       </section>
 
       {/* Overview */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
+      <section className="py-12 md:py-20">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-            <SectionReveal>
-              <p className="md:col-span-4 font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55">
+            <SectionReveal className="md:col-span-3">
+              <p className="font-medium text-[11px] uppercase tracking-[0.3em] text-bone/55">
                 {t('overview')}
               </p>
             </SectionReveal>
-            <div className="md:col-span-7 md:col-start-6 space-y-6">
+            <div className="md:col-span-8 md:col-start-5 space-y-8">
               {overview.map((para, i) => (
                 <SectionReveal key={i} delay={0.05 + i * 0.05}>
-                  <p className="text-base md:text-xl leading-relaxed text-bone/90">
+                  <p className="text-lg md:text-2xl leading-relaxed text-bone/90">
                     {para}
                   </p>
                 </SectionReveal>
@@ -137,11 +146,11 @@ function WorkPageContent({ brand }: { brand: Brand }) {
         </div>
       </section>
 
-      {/* Pull quote / tagline */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-32 md:py-44">
+      {/* Pull-quote tagline */}
+      <section className="py-14 md:py-24 overflow-hidden">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-condensed font-black uppercase leading-[0.92] tracking-[-0.025em] rtl:leading-[1.15] rtl:tracking-normal text-display-lg max-w-4xl">
+            <p className="font-condensed font-black uppercase leading-[0.92] tracking-[-0.03em] text-display-lg max-w-5xl">
               {tagline}
             </p>
           </SectionReveal>
@@ -149,10 +158,10 @@ function WorkPageContent({ brand }: { brand: Brand }) {
       </section>
 
       {/* Gallery */}
-      <section className="border-b hairline">
-        <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24">
+      <section className="pb-12 md:pb-20">
+        <div className="mx-auto max-w-wide px-6 md:px-10">
           <SectionReveal>
-            <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-10 md:mb-14">
+            <p className="font-medium text-[11px] uppercase tracking-[0.3em] text-bone/55 mb-10 md:mb-14">
               {t('fromStudio')}
             </p>
           </SectionReveal>
@@ -161,25 +170,22 @@ function WorkPageContent({ brand }: { brand: Brand }) {
       </section>
 
       {/* Next project */}
-      <section>
+      <section className="border-t hairline">
         <Link
           href={`/work/${next.slug}`}
-          className="group block bg-surface hover:bg-surface-2 transition-colors"
+          className="group block overflow-hidden"
         >
-          <div className="mx-auto max-w-wide px-6 md:px-10 py-20 md:py-28 flex items-center justify-between gap-8">
+          <div className="mx-auto max-w-wide px-6 md:px-10 py-16 md:py-24 flex items-center justify-between gap-8">
             <div className="min-w-0">
-              <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-[0.3em] rtl:tracking-normal text-bone/55 mb-4">
+              <p className="font-medium text-[11px] uppercase tracking-[0.3em] text-bone/55 mb-4">
                 {t('nextProject')}
               </p>
-              <p className="font-condensed font-black uppercase leading-none tracking-[-0.025em] rtl:leading-[1.1] rtl:tracking-normal text-display-lg truncate">
+              <p className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-[clamp(3rem,10vw,10rem)] truncate text-bone/40 group-hover:text-bone transition-colors duration-700 group-hover:translate-x-3 ease-smooth">
                 {nextClient}
               </p>
             </div>
-            <span
-              aria-hidden
-              className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-bone text-ink rtl:rotate-180 transition-transform duration-500 ease-smooth group-hover:translate-x-2 rtl:group-hover:-translate-x-2 shrink-0"
-            >
-              <Arrow className="w-5 h-5 md:w-6 md:h-6" />
+            <span className="inline-flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-bone text-ink shrink-0 transition-transform duration-500 ease-smooth group-hover:translate-x-2 group-hover:-rotate-45">
+              <Arrow className="w-6 h-6 md:w-8 md:h-8" />
             </span>
           </div>
         </Link>
@@ -200,13 +206,15 @@ function Gallery({ items, alt }: { items: GalleryItem[]; alt: string }) {
               : '';
         return (
           <SectionReveal key={item.src} delay={Math.min(i, 6) * 0.04}>
-            <div className={`relative overflow-hidden rounded-card bg-surface ${span} h-full`}>
+            <div
+              className={`group relative overflow-hidden rounded-xl bg-white/90 ${span} h-full shadow-[0_30px_60px_-35px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-smooth hover:scale-[1.02]`}
+            >
               <Image
                 src={item.src}
                 alt={alt}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-contain p-4 md:p-6"
+                className="object-contain p-4 md:p-6 transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
               />
             </div>
           </SectionReveal>

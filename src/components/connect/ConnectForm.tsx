@@ -73,7 +73,7 @@ export function ConnectForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="rounded-card bg-surface border hairline p-6 md:p-10"
+      className="rounded-xl bg-bone/5 border border-bone/10 backdrop-blur-md p-6 md:p-10"
     >
       {/* Honeypot — must stay empty. Visually hidden from humans. */}
       <input
@@ -354,7 +354,7 @@ function SuccessCard() {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.6, 0.05, 0.05, 1] }}
-      className="rounded-card bg-surface border hairline p-10 md:p-16 text-center"
+      className="rounded-xl bg-bone/5 border border-bone/10 backdrop-blur-md p-10 md:p-16 text-center"
     >
       <h2 className="text-display-md font-medium mb-4">{t('headline')}</h2>
       <p className="text-base md:text-lg text-bone/85 max-w-xl mx-auto">

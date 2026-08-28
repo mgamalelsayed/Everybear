@@ -4,6 +4,7 @@ import { SelectedWork } from '@/components/SelectedWork';
 import { Capabilities } from '@/components/Capabilities';
 import { Clients } from '@/components/Clients';
 import { CtaBlock } from '@/components/CtaBlock';
+import { HowItWorks } from '@/components/HowItWorks';
 
 export default async function HomePage({
   params,
@@ -19,6 +20,7 @@ export default async function HomePage({
       <Clients />
       <SelectedWork />
       <Capabilities />
+      <HowItWorks />
       <CtaBlock />
     </>
   );

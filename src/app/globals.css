@@ -94,28 +94,13 @@ input[type='range'].budget::-moz-range-thumb {
 
 /* RTL slider direction handled inline by reading dir */
 
-/* Logo marquee. Two tracks counter-scroll. Pauses when the strip is hovered
-   so a visitor can study any logo without it sliding away. */
-@keyframes marquee-x {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes marquee-x-reverse {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-.marquee-track {
-  animation: marquee-x linear infinite;
-  will-change: transform;
-}
-.marquee-track-reverse {
-  animation: marquee-x-reverse linear infinite;
-  will-change: transform;
-}
-/* Pause only when an actual tile is hovered — not the gaps or padding. */
-.marquee-track:has(.client-tile:hover),
-.marquee-track-reverse:has(.client-tile:hover) {
-  animation-play-state: paused;
+/* Arabic display type. The Condensed Black leading is tuned for Latin caps
+   (0.85–0.92) and clips Arabic ascenders, hamza, and shadda. Loosen every
+   condensed heading on Arabic pages in one place. English-only brand
+   wordmarks (slogan, backdrops) opt out with an explicit lang="en" attr. */
+.font-condensed:lang(ar) {
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
 }
 
 /* Backdrop wordmark fades in only when a tile is hovered. */

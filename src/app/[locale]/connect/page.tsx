@@ -23,13 +23,10 @@ export default async function ConnectPage({
 function ConnectPageContent() {
   const t = useTranslations('connect');
   return (
-    <section className="pt-28 md:pt-40 pb-24 md:pb-32">
+    <section className="pt-36 md:pt-48 pb-24 md:pb-32">
       <div className="mx-auto max-w-3xl px-6 md:px-10">
-        <header className="mb-10 md:mb-12">
-          <p className="font-medium text-[11px] rtl:text-sm uppercase tracking-widest rtl:tracking-normal text-bone/55 mb-6">
-            {t('eyebrow')}
-          </p>
-          <h1 className="font-medium text-display-lg max-w-2xl">
+        <header className="mb-12 md:mb-16">
+          <h1 className="font-condensed font-black uppercase leading-[0.9] tracking-[-0.03em] text-display-lg max-w-2xl">
             {t('headline')}
           </h1>
         </header>

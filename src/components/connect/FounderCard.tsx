@@ -5,7 +5,7 @@ export function FounderCard() {
   const t = useTranslations('connect.founder');
 
   return (
-    <div className="rounded-card bg-surface border hairline p-5 md:p-6 flex items-center justify-between gap-4">
+    <div className="rounded-xl bg-bone/5 border border-bone/10 backdrop-blur-md p-5 md:p-6 flex items-center justify-between gap-4">
       <div className="flex items-center gap-4 md:gap-5">
         <div
           aria-hidden
